@@ -34,7 +34,8 @@ const login = async (req, res) => {
         .json({ message: "User Not Found Please Enter Valid Credentials" });
     }
 
-    const isValidPassword = bcrypt.compare(password, user.password);
+    const isValidPassword = await bcrypt.compare(password, user.password);
+
     const token = jwt.sign(
       { id: user.id, role: user.role },
       process.env.JWT_SECRET,
