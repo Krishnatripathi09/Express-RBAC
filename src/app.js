@@ -6,7 +6,7 @@ const userRoutes = require("../src/routes/userRoutes");
 dbConnect();
 const app = express();
 
-//Use JSON Middleware
+//Use JSON Middlewares
 app.use(express.json());
 
 //routes
